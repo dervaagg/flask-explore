@@ -1,6 +1,13 @@
 from flask import Flask, render_template
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+from flask import Flask, render_template
+
+app = Flask(__name__)
 list_order = [
     {
         "nama": "Roy",
@@ -27,6 +34,5 @@ def orderPage():
     return render_template('listOrder.html', list_order=list_order)
 
 
-# Run the Flask Server
-if(__name__=='__main__'):
-    app.run()
+if __name__ == '__main__':
+    app.run(debug=True)
