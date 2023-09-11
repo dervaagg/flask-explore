@@ -5,9 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template('index.html')
-from flask import Flask, render_template
 
-app = Flask(__name__)
 list_order = [
     {
         "nama": "Roy",
@@ -29,7 +27,7 @@ list_order = [
     },
 ]
 
-@app.route('/')
+@app.route('/order')
 def orderPage():
     return render_template('listOrder.html', list_order=list_order)
 
